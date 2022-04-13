@@ -54,7 +54,7 @@ MODEL_FILE="/data/utils/fw_manager.model"
 VERSION="3.3.8_0021.0616"
 COOR_MD5SUM="f719bc9887d879abe0ef8774a6208481"
 KERNEL_MD5SUM="9dfa4d254a0818d04c9b24e666ea54a6"
-ROOTFS_MD5SUM="f129ed03359c2060fd869c448a95ea2f"
+ROOTFS_MD5SUM="686106f369f82d95e36807b3ff38ec13"
 BTBL_MD5SUM=""
 BTAPP_MD5SUM=""
 IRCTRL_MD5SUM=""
@@ -431,7 +431,7 @@ update_getpack()
     /tmp/curl -s -k -L -o /tmp/linux.bin https://raw.githubusercontent.com/niceboygithub/AqaraM1SM2fw/main/original/${simple_model}/${VERSION}/linux_${VERSION}.bin
     [ "$(md5sum /tmp/linux.bin)" != "${KERNEL_MD5SUM}  /tmp/linux.bin" ] && return 1
 
-    /tmp/curl -s -k -L -o /tmp/rootfs.bin https://raw.githubusercontent.com/niceboygithub/AqaraM1SM2fw/main/original/${simple_model}/${VERSION}/rootfs_${VERSION}_modified.bin
+    /tmp/curl -s -k -L -o /tmp/rootfs.bin https://raw.githubusercontent.com/niceboygithub/AqaraM1SM2fw/main/original/${simple_model}/${VERSION}/root_3.3.8_0021.0616.bin
     [ "$(md5sum /tmp/rootfs.bin)" != "${ROOTFS_MD5SUM}  /tmp/rootfs.bin" ] && return 1
 
     echo "Got packages done"
